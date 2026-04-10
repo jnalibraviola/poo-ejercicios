@@ -1,0 +1,28 @@
+class CuentaBancaria {
+  constructor(titular, saldoInicial) {
+    this.titular = titular;
+    this.saldo = saldoInicial;
+  }
+
+  depositarMonto(monto) {
+    this.saldo += monto;
+    console.log("Se ingresaron " + monto + " pesos a " + this.titular);
+    console.log("Saldo actual: " + this.saldo);
+  }
+
+  retirarMonto(monto) {
+    this.saldo -= monto;
+    console.log("Se retiraron " + monto + " pesos de " + this.titular);
+    console.log("Saldo actual: " + this.saldo);
+  }
+}
+
+// Crear cuenta
+const cuenta1 = new CuentaBancaria("Juan Carlitos", 1000);
+
+// Pedir monto al usuario
+let deposito = parseInt(prompt("Ingrese monto a depositar:"));
+cuenta1.depositarMonto(deposito);
+
+let retiro = parseInt(prompt("Ingrese monto a retirar:"));
+cuenta1.retirarMonto(retiro);
